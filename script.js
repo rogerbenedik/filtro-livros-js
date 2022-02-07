@@ -1,25 +1,32 @@
 const books = [
   {
     title: "Dracula",
-    author: "tiago",
-    genro: "horror",
+    author: "Bram Stoker",
+    genero: "Romance"
   },
   {
     title: "Art of war",
+    author: "Sun Tzu",
+    genero: "Não ficção"
   },
   {
     title: "Frankeinstein",
+    author: "Mary Shelley",
+    genero: "Romance"
   },
   {
-    title: "Bukowski",
+    title: "Mulheres",
+    author: "Bukoski",
+    genero: "Realismo sujo"
   },
   {
     title: "Turma da monica",
-    author: "ziraldo",
+    author: "",
+    genero: ""
   },
 ];
 
-const listElement = document.querySelector("#book-list");
+const listElement = document.querySelectorAll("#book-list");
 console.log(listElement);
 let booksHtml = "";
 
@@ -30,7 +37,7 @@ books.forEach(function (book) {
     author = book.author;
   }
 
-  booksHtml += "<div>" + book.title + "-" + author + "</div>";
+  booksHtml += "<div>" + book.title + "-" + author + "-" + genero "</div>";
 });
 
 listElement.innerHTML = booksHtml;
