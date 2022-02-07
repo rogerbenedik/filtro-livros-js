@@ -82,3 +82,15 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
     listElement.innerHTML = booksHtmlANother;
   }
 });
+
+
+
+// First tasks 
+
+// Nível easy 
+// 1 - Adicionar author, numero de paginas e genero em cada livro 
+// 2 - Fazer todos os dados aparecerem
+// 3 - Deixar algum dos livros sem algum dado
+
+// Nível Hard 
+// 4 - Criar uma função que quando chamada mostra todos os livros na tela sem filtro
