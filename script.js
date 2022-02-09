@@ -26,8 +26,8 @@ const books = [
   },
 ];
 
-const listElement = document.querySelectorAll("#book-list");
-console.log(listElement);
+const listElement = document.querySelector("#book-list");
+
 let booksHtml = "";
 
 books.forEach(function (book) {
@@ -37,7 +37,7 @@ books.forEach(function (book) {
     author = book.author;
   }
 
-  booksHtml += "<div>" + book.title + "-" + author + "-" + genero "</div>";
+  booksHtml += "<div>" + book.title + "-" + book.author + "-" + book.genero + "</div>";
 });
 
 listElement.innerHTML = booksHtml;
