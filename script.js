@@ -2,27 +2,27 @@ const books = [
   {
     title: "Dracula",
     author: "Bram Stoker",
-    genero: "Romance"
+    genero: "Romance",
   },
   {
     title: "Art of war",
     author: "Sun Tzu",
-    genero: "Não ficção"
+    genero: "Não ficção",
   },
   {
     title: "Frankeinstein",
     author: "Mary Shelley",
-    genero: "Romance"
+    genero: "Romance",
   },
   {
     title: "Mulheres",
     author: "Bukoski",
-    genero: "Realismo sujo"
+    genero: "Realismo sujo",
   },
   {
     title: "Turma da monica",
     author: "",
-    genero: ""
+   
   },
 ];
 
@@ -78,7 +78,6 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
     listElement.innerHTML = booksHtmlANother;
   }
 });
-
 
 // First tasks
 
