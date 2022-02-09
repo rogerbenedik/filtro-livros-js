@@ -28,23 +28,24 @@ const books = [
 
 const listElement = document.querySelector("#book-list");
 
-let booksHtml = "";
+function renderAllBooks() {
+  let booksHtml = '';
 
-books.forEach(function (book) {
-  let author = "";
+  books.forEach(function (book) {
+    let author = "";
 
-  if (book.author) {
-    author = book.author;
-  }
+    if (book.author) {
+      author = book.author;
+    }
 
-  booksHtml += "<div class='col-md-4'>" + book.title + "-" + book.author + "-" + book.genero + "</div>";
-});
+    booksHtml += "<div class='col-md-4'>" + book.title + "-" + book.author + "-" + book.genero + "</div>";
+  });
 
-listElement.innerHTML = booksHtml;
+  listElement.innerHTML = booksHtml;
+}
 
-// Até aqui foi a listagem
-
-// Agora a filtragem
+// First render
+renderAllBooks();
 
 document.getElementById("filtro").addEventListener("keyup", function (event) {
   let booksHtmlANother = "";
@@ -54,19 +55,7 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
   let filteredBooks = [];
 
   if (typed == "") {
-    let booksHtml = "";
-
-    books.forEach(function (book) {
-      let author = "";
-
-      if (book.author) {
-        author = book.author;
-      }
-
-      booksHtml += "<div class='col-md-4'>" + book.title + "-" + author + "</div>";
-    });
-
-    listElement.innerHTML = booksHtml;
+    renderAllBooks();
   } else {
     books.forEach(function (book) {
       const title = book.title.toLowerCase();
@@ -91,13 +80,12 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
 });
 
 
+// First tasks
 
-// First tasks 
-
-// Nível easy 
-// 1 - Adicionar author, numero de paginas e genero em cada livro 
+// Nível easy
+// 1 - Adicionar author, numero de paginas e genero em cada livro
 // 2 - Fazer todos os dados aparecerem
 // 3 - Deixar algum dos livros sem algum dado
 
-// Nível Hard 
+// Nível Hard
 // 4 - Criar uma função que quando chamada mostra todos os livros na tela sem filtro
