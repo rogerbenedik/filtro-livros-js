@@ -26,25 +26,26 @@ const books = [
   },
 ];
 
-const listElement = document.querySelectorAll("#book-list");
-console.log(listElement);
-let booksHtml = "";
+const listElement = document.querySelector("#book-list");
 
-books.forEach(function (book) {
-  let author = "";
+function renderAllBooks() {
+  let booksHtml = '';
 
-  if (book.author) {
-    author = book.author;
-  }
+  books.forEach(function (book) {
+    let author = "";
 
-  booksHtml += "<div>" + book.title + "-" + author + "-" + genero "</div>";
-});
+    if (book.author) {
+      author = book.author;
+    }
 
-listElement.innerHTML = booksHtml;
+    booksHtml += "<div class='col-md-4'>" + book.title + "-" + book.author + "-" + book.genero + "</div>";
+  });
 
-// Até aqui foi a listagem
+  listElement.innerHTML = booksHtml;
+}
 
-// Agora a filtragem
+// First render
+renderAllBooks();
 
 document.getElementById("filtro").addEventListener("keyup", function (event) {
   let booksHtmlANother = "";
@@ -54,19 +55,7 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
   let filteredBooks = [];
 
   if (typed == "") {
-    let booksHtml = "";
-
-    books.forEach(function (book) {
-      let author = "";
-
-      if (book.author) {
-        author = book.author;
-      }
-
-      booksHtml += "<div>" + book.title + "-" + author + "</div>";
-    });
-
-    listElement.innerHTML = booksHtml;
+    renderAllBooks();
   } else {
     books.forEach(function (book) {
       const title = book.title.toLowerCase();
@@ -83,7 +72,7 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
         author = book.author;
       }
 
-      booksHtmlANother += "<div>" + book.title + "-" + author + "</div>";
+      booksHtmlANother += "<div class='col-md-4'>" + book.title + "-" + author + "</div>";
     });
 
     listElement.innerHTML = booksHtmlANother;
@@ -91,13 +80,12 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
 });
 
 
+// First tasks
 
-// First tasks 
-
-// Nível easy 
-// 1 - Adicionar author, numero de paginas e genero em cada livro 
+// Nível easy
+// 1 - Adicionar author, numero de paginas e genero em cada livro
 // 2 - Fazer todos os dados aparecerem
 // 3 - Deixar algum dos livros sem algum dado
 
-// Nível Hard 
+// Nível Hard
 // 4 - Criar uma função que quando chamada mostra todos os livros na tela sem filtro
