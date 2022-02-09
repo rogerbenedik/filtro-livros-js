@@ -37,7 +37,7 @@ books.forEach(function (book) {
     author = book.author;
   }
 
-  booksHtml += "<div>" + book.title + "-" + book.author + "-" + book.genero + "</div>";
+  booksHtml += "<div class='col-md-4'>" + book.title + "-" + book.author + "-" + book.genero + "</div>";
 });
 
 listElement.innerHTML = booksHtml;
@@ -63,7 +63,7 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
         author = book.author;
       }
 
-      booksHtml += "<div>" + book.title + "-" + author + "</div>";
+      booksHtml += "<div class='col-md-4'>" + book.title + "-" + author + "</div>";
     });
 
     listElement.innerHTML = booksHtml;
@@ -83,7 +83,7 @@ document.getElementById("filtro").addEventListener("keyup", function (event) {
         author = book.author;
       }
 
-      booksHtmlANother += "<div>" + book.title + "-" + author + "</div>";
+      booksHtmlANother += "<div class='col-md-4'>" + book.title + "-" + author + "</div>";
     });
 
     listElement.innerHTML = booksHtmlANother;
